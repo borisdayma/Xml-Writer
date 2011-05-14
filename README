@@ -1,0 +1,31 @@
+Xml-Writer
+
+Objective
+Xml-Writer has been created to write easily xml files in Python 3.
+It lets you make a xml file very fastly and in an intuitive way, expliciting the hierarchy.
+
+Example:
+from xml_writer import xml_writer
+xml = xml_writer()
+with xml.data:
+    xml.name('Toto')
+    xml.friend
+    with xml.entry(Id='4'):
+        xml.visit('Lunch', time = '12h45', day = 'Wednesday')
+        xml.summary('Lunch with friends')
+    xml.address(country="France", city="Marseille")
+
+
+Output
+<?xml version="1.0" encoding="UTF-8" ?>
+<data>
+	<name>Toto</name>
+	<friend />
+	<entry Id="4">
+		<visit day="Wednesday" time="12h45">Lunch</visit>
+		<summary>Lunch with friends</summary>
+	</entry>
+	<address city="Marseille" country="France" />
+</data>
+
+Contact: Boris Dayma (boris.dayma@gmail.com)
